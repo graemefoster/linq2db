@@ -58,7 +58,7 @@ namespace LinqToDB.DataProvider.DB2
 					Ordinal        = Converter.ChangeTypeTo<int>(rd[4])
 				},@"
 					SELECT
-						col.TBCREATOR,
+						STRIP(col.TBCREATOR),
 						col.TBNAME,
 						idx.NAME,
 						col.NAME,
@@ -79,7 +79,7 @@ namespace LinqToDB.DataProvider.DB2
 		{
 			var sql = @"
 				SELECT
-					TBCREATOR,
+					STRIP(TBCREATOR),
 					TBNAME,
 					NAME,
 					LENGTH,
